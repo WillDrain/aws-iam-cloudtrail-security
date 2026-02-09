@@ -15,11 +15,16 @@ Implement a least-privilege IAM role for an EC2 service and enable CloudTrail to
 - CloudTrail provides visibility for auditing and incident response
 - Log validation + KMS encryption improves integrity and confidentiality of audit logs
 
-## Evidence (Screenshots)
-See `/evidence`:
-1. IAM role + attached customer-managed policy
-2. CloudTrail secure config (multi-region + validation + SSE-KMS)
-3. CloudTrail Event History filtered to `iam.amazonaws.com`
+## Evidence
+
+- IAM least-privilege role attached to EC2  
+  ![IAM Role](evidence/01-iam-role-least-privilege.png)
+
+- CloudTrail secure configuration (multi-region, KMS, validation)  
+  ![CloudTrail Config](evidence/02-cloudtrail-secure-config.png)
+
+- IAM activity captured in CloudTrail event history  
+  ![IAM Events](evidence/03-cloudtrail-iam-event-history.png)
 
 ## Files
 - IAM policy JSON: `/policies/s3-readonly-specific-bucket.json`
